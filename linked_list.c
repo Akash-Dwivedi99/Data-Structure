@@ -1,24 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
+struct Node {
     int data;
-    struct node *next;
+    struct Node *next;
 };
 
 int main() {
+    struct Node *head = NULL, *newnode, *temp;
+    int choice = 1;
 
-    struct node *head = NULL;
-    struct node *newnode;
+    while (choice) {
+        // Create a new node
+        newnode = (struct Node *)malloc(sizeof(struct Node));
 
-    newnode = (struct node *)malloc(sizeof(struct node));
+        printf("Enter Data: ");
+        scanf("%d", &newnode->data);
 
-    printf("Enter Data: ");
-    scanf("%d", &newnode->data);
+        newnode->next = NULL;
 
-    newnode->next = NULL;
+        // If list is empty
+        if (head == NULL) {
+            head = temp = newnode;
+        }
+        else {
+            temp->next = newnode;
+            temp = newnode;
+        }
 
-    head = newnode;
-    printf("Entered Data : %d" , newnode -> data);
+        printf("Do you want to continue? (1 = Yes, 0 = No): ");
+        scanf("%d", &choice);
+    }
+
+    // Display the linked list
+    printf("\nLinked List:\n");
+
+    temp = head;
+
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+
+    printf("NULL\n");
+
     return 0;
 }
