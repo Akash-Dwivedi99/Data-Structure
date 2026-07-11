@@ -8,7 +8,7 @@ int main () {
     struct node *next;
 
 }; 
-   struct node *head, *temp, *newnode, *end;
+   struct node *head, *temp, *newnode; /*end*/
 
     head = 0;
     int choice = 1;
@@ -31,21 +31,21 @@ int main () {
         scanf("%d", &choice);
     }
 
-    end = temp;
+    if (head != NULL){
+        //end = temp;          
+        temp->next=head;
+        //end->next = head;
+    }
 
 
     printf("\nLinked List\n");
     temp = head;
-    while(temp != 0){
+    while(temp->next != head){
         printf("%d -> ", temp->data);
         temp = temp -> next;
     }
     
-
-    end->next = head;
-
-    
-    printf("%d", end->next->data);
+    printf("%d", temp->data);
     return 0;
 
 }
