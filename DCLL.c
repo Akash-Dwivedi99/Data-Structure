@@ -8,7 +8,6 @@ struct node {
 }; 
 struct node *head = 0;
 struct node *tail = 0;
-int length = 0;
 
 void createDCLL() {
     struct node *newnode ;
@@ -34,19 +33,15 @@ void createDCLL() {
         printf("do you want to add more nodes ? (1 for yes , 0 for no) : ");
         scanf("%d", &choice);
         }
-
-        
 }
 
 void display() {
-    struct node *temp; 
+    struct node *temp;
     temp = head;
     do {
         printf("%d --> ", temp->data);
         temp = temp->next;
-        length++;
     } while(temp != head);
-    printf("\nLength of list is %d\n", length);
 }
 
 void insertatbeg(){
@@ -99,7 +94,7 @@ void insertatpos() {
     printf("Enter data : ");
     scanf("%d", &newnode->data);
 
-    if (pos<1 || pos > length){
+    if (pos<1){
         printf("Invalid position");
     }
     else if(pos == 1){
