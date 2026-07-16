@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// STACK IMPLEMENTATION USING LINKED LIST
 struct node {
     int data;
     struct node *link;
