@@ -4,12 +4,35 @@
 
 #define N 5
 
+int search(int stack[], int * top, int key){
+    for(int i = *top; i >= 0 ; i--){
+        if(stack[i] == key){
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int isFull(int *top){
+    if(*top == N-1){
+        return 1;
+    }
+    return 0;
+}
+
+int isEmpty(int *top){
+    if(*top == -1){
+        return 1;
+    }
+    return 0;
+}
+
 void push(int stack[], int *top){
     int x;
     printf("Enter Data : ");
     scanf("%d", &x);
 
-    if(*top == N-1) {
+    if(isFull(top)) {
         printf("\nStack Overflow\n");
     }
     else {
@@ -19,7 +42,7 @@ void push(int stack[], int *top){
 }
 
 void pop(int stack[], int *top){
-    if(*top==-1){
+    if(isEmpty(top)){
         printf("\nStack Underflow\n");
     }
     else {
@@ -47,7 +70,7 @@ void display(int stack[], int *top) {
 
 
 int main () {
-    int choice ;
+    int choice , key;
     int top = -1;
     int stack[N];
 
@@ -58,7 +81,7 @@ int main () {
     printf("4 : Display\n");
     printf("0 : Exit\n");
 
-    printf("Enter your Choice : " , &choice);
+    printf("Enter your Choice : ");
     scanf("%d", &choice);
     switch (choice)
     {
@@ -89,5 +112,13 @@ int main () {
     }
 
     } while(choice != 0);
+    printf("Enter the element to search in the stack : ");
+    scanf("%d" , &key);
+    if(search(stack , &top , key)){
+        printf("Element is found in the stack");
+    }
+    else {
+        printf("Element is not found in the stack");
+    }
     return 0;
 }
