@@ -44,7 +44,7 @@ void peek() {
         printf("\nUnderflow Condition\n");
     }
     else {
-        printf("%d\n", queue[rear]);
+        printf("Element at front : %d\n", queue[front]);
     }
 }
 void display() {

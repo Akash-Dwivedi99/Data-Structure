@@ -3,46 +3,44 @@
 // STACK IMPLEMENTATIONN USING ARRAY
 
 #define N 5
-int top = -1;
-int stack[N];
 
-void push(){
+void push(int stack[], int *top){
     int x;
     printf("Enter Data : ");
     scanf("%d", &x);
 
-    if(top == N-1) {
+    if(*top == N-1) {
         printf("\nStack Overflow\n");
     }
     else {
-        top++;
-        stack[top] = x;
+        (*top)++;
+        stack[*top] = x;
     }
 }
 
-void pop(){
-    if(top==-1){
+void pop(int stack[], int *top){
+    if(*top==-1){
         printf("\nStack Underflow\n");
     }
     else {
-        int  item = stack[top];
-        top-- ;
+        int  item = stack[*top];
+        (*top)-- ;
         printf("\nPoped element : %d\n", item);
     }
 }
 
-void peek() {
-    if(top == -1) {
+void peek(int stack[], int *top) {
+    if(*top == -1) {
         printf("\nStack Underflow\n");
     }
     else {
-        printf("\nTopmost Element : %d\n", stack[top]);
+        printf("\nTopmost Element : %d\n", stack[*top]);
     }
 }
 
-void display() {
+void display(int stack[], int *top) {
     int i;
-    for(i=top; i >= 0; i--){
+    for(i=*top; i >= 0; i--){
         printf("%d  ", stack[i]);
     }
 }
@@ -50,6 +48,9 @@ void display() {
 
 int main () {
     int choice ;
+    int top = -1;
+    int stack[N];
+
     do {
     printf("\n1 : Push\n");
     printf("2 : Pop\n");
@@ -63,19 +64,19 @@ int main () {
     {
 
     case 1:
-        push();
+        push(stack, &top);
         break;
     
     case 2:
-       pop();
+       pop(stack, &top);
        break;
 
     case 3:
-      peek();
+      peek(stack ,&top);
       break;
     
     case 4:
-      display();
+      display(stack , &top);
       break;
 
     case 0:
