@@ -59,8 +59,8 @@ int main()
     /* Dequeue elements and store them in temporary array */
     while (front <= rear)
     {
-        temp[tempRear + 1] = dequeue(queue, &front, rear);
         tempRear++;
+        temp[tempRear] = dequeue(queue, &front, rear);
     }
 
     /* Enqueue elements back in reverse order */
