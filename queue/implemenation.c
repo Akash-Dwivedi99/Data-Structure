@@ -20,10 +20,8 @@ void enqueue(int queue[], int *rear, int *front) {
 }
 
 void dequeue(int queue[], int *rear, int *front) {
-    if (*front == -1 || *front > *rear) {
+    if (*front == -1) {
         printf("Queue is Empty\n");
-        *front = -1;
-        *rear = -1;
         return;
     }
 

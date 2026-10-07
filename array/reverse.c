@@ -18,12 +18,13 @@ int main() {
         printf("%d ", arr[i]);
     }
 
-    int start = 0;
-    int end = n-1 ;
+    int *start = &arr[0];
+    int *end = &arr[n-1] ;
 
     while(start < end ) {
-        arr[start] = arr[end];
-        arr[end] = arr[start];
+        int temp = *start;
+        *start = *end;
+        *end = temp;
         start++;
         end--;
     }

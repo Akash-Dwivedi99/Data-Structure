@@ -6,11 +6,11 @@ void enqueue(int queue[], int *rear , int value){
         printf("Queue is Full");
         return;
     }
-    else {
-        (*rear)++;
-        queue[*rear] = value;
-    }
+    
+    (*rear)++;
+    queue[*rear] = value;
 }
+
 
 int dequeue(int queue[], int *front, int *rear){
     if(*front > *rear){

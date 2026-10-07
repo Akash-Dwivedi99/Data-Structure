@@ -33,8 +33,6 @@ void display(int queue[], int front, int rear)
     {
         printf("%d ", queue[i]);
     }
-
-    printf("\n");
 }
 
 int main()
@@ -42,7 +40,7 @@ int main()
     int queue[MAX];
     int temp[MAX];
     int front = 0, rear = -1;
-    int tempFront = 0, tempRear = -1;
+    int j = 0;
     int n, i, value;
 
     printf("Enter number of elements: ");
@@ -59,12 +57,12 @@ int main()
     /* Dequeue elements and store them in temporary array */
     while (front <= rear)
     {
-        tempRear++;
-        temp[tempRear] = dequeue(queue, &front, rear);
+        temp[j] = dequeue(queue, &front, rear);
+        j++;
     }
 
     /* Enqueue elements back in reverse order */
-    for (i = tempRear; i >= tempFront; i--)
+    for (i = j-1 ; i >= 0; i--)
     {
         enqueue(queue, &rear, temp[i]);
     }
