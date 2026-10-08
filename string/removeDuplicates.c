@@ -2,7 +2,6 @@
 #include <strings.h>
 #define MAX 100
 
-
 void push(char str[], int *top, char ch){
     if(*top >= 0 && ch == str[*top]) {
         (*top)--;
