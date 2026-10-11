@@ -29,8 +29,7 @@ void display(int queue[], int *rear , int *front){
 }
 
 int exits(int temp[], int size, int value){
-    int i;
-    for(i = 0 ; i < size ; i++){
+    for(int i = 0 ; i < size ; i++){
         if(temp[i] == value){
             return 1;
         }

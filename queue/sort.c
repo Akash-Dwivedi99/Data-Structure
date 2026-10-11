@@ -33,7 +33,7 @@ void display(int queue[], int *rear , int *front){
 int main() {
     int queue[MAX];
     int temp[MAX];
-    int front = 0 ; //int tempFront = 0;
+    int front = 0 ;
     int rear = -1; int tempRear = -1;
     int value , n, i;
 
