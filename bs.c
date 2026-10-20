@@ -24,7 +24,7 @@ int binarySerach(int arr[], int low, int high, int key) {
 int main() {
     int arr[] = {5, 10, 15, 20, 23, 30, 35};
     int n = 7;
-    int key = 25;
+    int key = 23;
     printf("Element is found at  : %d", binarySerach(arr, 0, n-1, key));
 
     return 0;
