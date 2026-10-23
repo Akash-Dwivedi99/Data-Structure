@@ -4,7 +4,7 @@ int pivotIndex(int nums[], int n) {
     int low = 0;
     int high = n-1;
 
-    if(nums[low] < nums[high]) {
+    if(nums[low] <= nums[high]) {
         return -1;
     }
 
