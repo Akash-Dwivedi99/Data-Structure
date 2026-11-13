@@ -235,11 +235,5 @@ int main () {
 
     } while(choice);
 
-    printf("LINKED LIST : ");
-    while(head != NULL) {
-        printf("%d -> ", head->data);
-        head = head->next;
-    }
-    printf("NULL\n");
     return 0;
 }
